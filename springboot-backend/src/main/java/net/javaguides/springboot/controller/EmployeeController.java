@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -27,7 +28,15 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeRepository employeeRepository;
-	
+
+
+	//hello world routes
+
+	@GetMapping("/hello")
+	public ResponseEntity<String> getHello(){
+		return new ResponseEntity<String>("hello pat", HttpStatus.OK);
+	}
+
 	// get all employees
 	@GetMapping("/employees")
 	public List<Employee> getAllEmployees(){
