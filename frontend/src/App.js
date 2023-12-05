@@ -10,25 +10,6 @@ import UpdateEmployeeComponent from './components/UpdateEmployeeComponent';
 import ViewEmployeeComponent from './components/ViewEmployeeComponent';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-// function App() {
-//   return (
-//     <Router>
-//     <HeaderComponent/>
-//       <Routes>
-//         <Route path="/" element={<ListEmployeeComponent />} />
-//         <Route path="/employees" element={<ListEmployeeComponent />} />
-//         <Route path="/add-employee/:id" element={<CreateEmployeeComponent />} />
-//         <Route path="/view-employee/:id" element={<ViewEmployeeComponent />} />
-//         {/* Add other routes as needed */}
-//       </Routes>
-//     </Router>
-//   );
-// }
-
-// export default App;
-
-
-
 function App() {
   return (
     <div>
@@ -40,7 +21,8 @@ function App() {
                           <Route path="/employees" element={<ListEmployeeComponent />} />
                           <Route path="/add-employee/:id" element={<CreateEmployeeComponent />} />
                           <Route path="/view-employee/:id" element={<ViewEmployeeComponent />} />
-                          {/* <Route path="/update-employee/:id" element={<UpdateEmployeeComponent />} /> */}
+                          <Route path="/update-employee/:id" element={<UpdateEmployeeComponent />} />
+
                     </Routes>
                 </div>
               <FooterComponent />

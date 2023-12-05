@@ -1,7 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import EmployeeService from '../services/EmployeeService';
+import { useNavigate } from 'react-router-dom';
+
 
 const ListEmployeeComponent = (props) => {
+
+
+    const navigate = useNavigate();
+
+    const addEmployee = () => {
+        navigate('/add-employee/_add');
+    };
+
     const [employees, setEmployees] = useState([]);
 
     useEffect(() => {
@@ -17,16 +27,13 @@ const ListEmployeeComponent = (props) => {
     };
 
     const viewEmployee = (id) => {
-        props.history.push(`/view-employee/${id}`);
+        navigate(`/view-employee/${id}`);
     };
 
     const editEmployee = (id) => {
-        props.history.push(`/add-employee/${id}`);
+        navigate(`/add-employee/${id}`);
     };
 
-    const addEmployee = () => {
-        props.history.push('/add-employee/_add');
-    };
 
     return (
         <div>
